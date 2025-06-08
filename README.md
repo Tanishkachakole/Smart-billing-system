@@ -5,7 +5,7 @@ A Python mini project to create a **billing system** with user input, quantity/p
 ## 📌 Features
 - User-defined number of items
 - Dynamic input of item name, quantity, and price
-- Calculates total amount with 10% discount if total > Rs. 5000
+- Calculates total amount with 10% discount if total > Rs. 500
 - Nicely formatted bill summary with item-wise total
 - Implemented using core Python (no external libraries)
 
