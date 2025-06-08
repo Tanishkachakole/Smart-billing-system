@@ -1,0 +1,35 @@
+# file billing_system.py
+#author Tanishaka Chakole
+#smart billing system in phython with discount logic
+
+
+
+items=[]
+quantity=[]
+prices=[]
+n=int(input("enter number of item"))
+for i in range (n):
+    item=input("enter item name :- ")
+    qun = int(input("enter quantity :- "))
+    price = int(input("price of item :- "))
+    items.append(item)
+    quantity.append(qun)
+    prices.append(price)
+    
+from functools import reduce
+
+amount= [quantity[i] * prices[i] for i in range(n)]
+total= reduce(lambda x,y: x+y,amount)
+
+if total >500 :
+    discount = total*0.10
+    total-=discount
+    print(f"\n Congatulation you got 10% Discount \n discount got :Rs{discount:.2f}")
+    
+print("\n _________Bill Summary_________")
+print(f"{'Item':10}{'Qty':>5}{'price':>8}{'total':>10}")
+print('_'*40)
+for i in range(n):
+    print(f"{items [i]:10}  {quantity [i]:>5.2f}{prices[i]:>8.2f}{amount[i]:>10.2f}")
+print('_'*40)
+print ("\n total ammount: Rs",total)
